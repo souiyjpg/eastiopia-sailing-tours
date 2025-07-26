@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Eastiopia for your Indonesian sailing adventure. Get in touch for tour bookings, inquiries, and personalized travel planning.">
+    <title>Contact Us - Eastiopia.id</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23059669" width="1200" height="600"/><circle fill="%23047857" cx="200" cy="150" r="80"/><circle fill="%23065f46" cx="800" cy="300" r="120"/><circle fill="%23064e3b" cx="1000" cy="100" r="60"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        .teal-gradient {
+            background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #14b8a6;
+            box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+        }
+        .form-input:invalid {
+            border-color: #ef4444;
+        }
+        .form-input:valid {
+            border-color: #10b981;
+        }
+        
+        /* New Animation Keyframes */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Utility classes for animations */
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.6s ease-out forwards;
+        }
+
+        /* Back to Top Button Styles */
+        #backToTop {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #14b8a6;
+            color: #ffffff;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 100;
+        }
+
+        #backToTop:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-inter">
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed w-full top-0 z-50" role="banner">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center" role="navigation" aria-label="Main navigation">
+            <div class="text-2xl font-bold text-teal-600 font-playfair" role="img" aria-label="Eastiopia logo">
+                <a href="index.html" class="hover:text-teal-700 transition-colors">EASTIOPIA.ID</a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-teal-600 font-medium transition-colors" aria-label="Home page">Home</a>
+                <a href="Tour-Package.html" class="text-gray-700 hover:text-teal-600 font-medium transition-colors" aria-label="Tour packages">Tour Package</a>
+                <a href="Phinisi-Boat.html" class="text-gray-700 hover:text-teal-600 font-medium transition-colors" aria-label="Phinisi boats">Phinisi Boat</a>
+                <a href="Destinations.html" class="text-gray-700 hover:text-teal-600 font-medium transition-colors" aria-label="Destinations">Destinations</a>
+                <a href="Contact.html" class="text-teal-600 hover:text-teal-700 font-medium transition-colors" aria-label="Contact us" aria-current="page">Contact Us</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span class="sr-only">Menu</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center relative pt-20 animate-fade-in" role="banner" aria-label="Contact us hero section">
+        <div class="text-center text-white px-4">
+            <h1 class="text-5xl md:text-7xl font-bold font-playfair mb-4">Get in Touch</h1>
+            <p class="text-xl md:text-2xl font-light">Start planning your Indonesian adventure today</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <main class="py-16 bg-white" role="main" aria-label="Contact information and form">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div>
+                    <header class="mb-8">
+                        <h2 class="text-4xl font-bold font-playfair text-gray-800 mb-4">Let's Plan Your <span class="text-teal-600">Adventure</span></h2>
+                        <p class="text-gray-600 leading-relaxed">Ready to explore Indonesia's most breathtaking destinations? Our team is here to help you create the perfect sailing adventure. Contact us for personalized tour planning, boat bookings, and expert travel advice.</p>
+                    </header>
+
+                    <!-- Contact Details -->
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 teal-gradient rounded-full flex items-center justify-center flex-shrink-0">
+                                <div class="w-6 h-6 text-white flex items-center justify-center">
+                                    <div class="w-4 h-4 border-2 border-white rounded-full relative">
+                                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-1">Office Location</h3>
+                                <p class="text-gray-600">Labuan Bajo, Flores<br>East Nusa Tenggara, Indonesia</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 teal-gradient rounded-full flex items-center justify-center flex-shrink-0">
+                                <div class="w-6 h-6 text-white flex items-center justify-center">
+                                    <div class="w-4 h-4 border-2 border-white rounded"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-1">Email Address</h3>
+                                <p class="text-gray-600">info@eastiopia.id<br>booking@eastiopia.id</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 teal-gradient rounded-full flex items-center justify-center flex-shrink-0">
+                                <div class="w-6 h-6 text-white flex items-center justify-center">
+                                    <div class="w-4 h-4 border-2 border-white rounded-lg"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-1">Phone Number</h3>
+                                <p class="text-gray-600">+62 812 3456 7890<br>+62 821 9876 5432</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 teal-gradient rounded-full flex items-center justify-center flex-shrink-0">
+                                <div class="w-6 h-6 text-white flex items-center justify-center">
+                                    <div class="w-4 h-4 border border-white rounded relative">
+                                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 border border-white rounded-full"></div>
+                                        <div class="absolute top-1 right-1 w-1 h-1 bg-white rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-1">Social Media</h3>
+                                <p class="text-gray-600">@eastiopia.id<br>Follow us for updates and inspiration</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="bg-gray-50 rounded-2xl p-6 animate-slide-up">
+                        <h3 class="text-xl font-bold font-playfair text-gray-800 mb-4">Business Hours</h3>
+                        <div class="space-y-2 text-gray-600">
+                            <div class="flex justify-between">
+                                <span>Monday - Friday</span>
+                                <span class="font-semibold">8:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Saturday</span>
+                                <span class="font-semibold">9:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Sunday</span>
+                                <span class="font-semibold">10:00 AM - 4:00 PM</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-4">*Emergency bookings available 24/7</p>
+                    </div>
+                </div>
+
+                    <!-- Contact Form -->
+                <div>
+                    <div class="bg-white rounded-2xl shadow-lg p-8 animate-slide-up">
+                        <header class="mb-6">
+                            <h3 class="text-2xl font-bold font-playfair text-gray-800 mb-2">Send us a Message</h3>
+                            <p class="text-gray-600">Fill out the form below and we'll get back to you within 24 hours.</p>
+                        </header>
+
+                        <form id="contactForm" class="space-y-6" novalidate>
+                            <!-- Name Field -->
+                            <div>
+                                <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name" 
+                                    required 
+                                    minlength="2"
+                                    maxlength="50"
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                                    placeholder="Enter your full name"
+                                    aria-describedby="name-error"
+                                >
+                                <div id="name-error" class="text-red-500 text-sm mt-1 hidden" role="alert"></div>
+                            </div>
+
+                            <!-- Email Field -->
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    required
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                                    placeholder="Enter your email address"
+                                    aria-describedby="email-error"
+                                >
+                                <div id="email-error" class="text-red-500 text-sm mt-1 hidden" role="alert"></div>
+                            </div>
+
+                            <!-- Phone Field -->
+                            <div>
+                                <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone"
+                                    pattern="[+]?[0-9\s\-\(\)]+"
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                                    placeholder="Enter your phone number"
+                                    aria-describedby="phone-error"
+                                >
+                                <div id="phone-error" class="text-red-500 text-sm mt-1 hidden" role="alert"></div>
+                            </div>
+
+                            <!-- Subject Field -->
+                            <div>
+                                <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">Subject</label>
+                                <select 
+                                    id="subject" 
+                                    name="subject"
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                                    aria-describedby="subject-error"
+                                >
+                                    <option value="">Select a subject</option>
+                                    <option value="tour-inquiry">Tour Package Inquiry</option>
+                                    <option value="boat-booking">Phinisi Boat Booking</option>
+                                    <option value="custom-trip">Custom Trip Planning</option>
+                                    <option value="general">General Information</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div id="subject-error" class="text-red-500 text-sm mt-1 hidden" role="alert"></div>
+                            </div>
+
+                            <!-- Message Field -->
+                            <div>
+                                <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message *</label>
+                                <textarea 
+                                    id="message" 
+                                    name="message" 
+                                    required
+                                    minlength="10"
+                                    maxlength="1000"
+                                    rows="5"
+                                    class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors resize-vertical"
+                                    placeholder="Tell us about your travel plans, preferred dates, group size, or any specific requirements..."
+                                    aria-describedby="message-error"
+                                ></textarea>
+                                <div id="message-error" class="text-red-500 text-sm mt-1 hidden" role="alert"></div>
+                                <div class="text-gray-500 text-sm mt-1">
+                                    <span id="message-count">0</span>/1000 characters
+                                </div>
+                            </div>
+
+                            <!-- Privacy Consent -->
+                            <div class="flex items-start space-x-3">
+                                <input 
+                                    type="checkbox" 
+                                    id="privacy" 
+                                    name="privacy" 
+                                    required
+                                    class="mt-1 w-4 h-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500"
+                                    aria-describedby="privacy-error"
+                                >
+                                <label for="privacy" class="text-sm text-gray-600">
+                                    I agree to the processing of my personal data for the purpose of responding to my inquiry and providing travel services. *
+                                </label>
+                                <div id="privacy-error" class="text-red-500 text-sm mt-1 hidden" role="alert"></div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button 
+                                type="submit" 
+                                class="w-full teal-gradient text-white py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+                                id="submitBtn"
+                            >
+                                Send Message
+                            </button>
+
+                            <!-- Success Message -->
+                            <div id="success-message" class="hidden bg-green-50 border border-green-200 rounded-lg p-4">
+                                <div class="flex items-center">
+                                    <div class="w-6 h-6 text-green-600 mr-3">
+                                        <div class="w-4 h-4 border-2 border-green-600 rounded-full relative">
+                                            <div class="absolute top-1 left-1 w-2 h-1 border-b-2 border-r-2 border-green-600 transform rotate-45"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-green-800 font-semibold">Message Sent Successfully!</h4>
+                                        <p class="text-green-700 text-sm">Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16" role="contentinfo">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 text-teal-400 mr-4 flex items-center justify-center" role="img" aria-label="Eastiopia boat logo">
+                            <div class="relative">
+                                <div class="w-8 h-4 bg-current rounded-t-full"></div>
+                                <div class="w-10 h-1 bg-current mx-auto"></div>
+                                <div class="w-6 h-3 bg-current mx-auto rounded-b-lg"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold font-playfair text-teal-400">east.iopia</h3>
+                            <p class="text-sm text-gray-400">Your Unforgettable Sailing Partner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Whether exploring the islands of Komodo or diving in the coral-rich seas of Raja Ampat, Eastiopia ensures a remarkable journey for travelers seeking adventure, relaxation, and natural beauty
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <nav aria-label="Footer navigation">
+                    <h4 class="text-xl font-bold font-playfair mb-6">Quick Link</h4>
+                    <ul class="space-y-3" role="list">
+                        <li role="listitem"><a href="Tour-Package.html" class="text-gray-300 hover:text-teal-400 transition-colors">Tour Package</a></li>
+                        <li role="listitem"><a href="Phinisi-Boat.html" class="text-gray-300 hover:text-teal-400 transition-colors">Phinisi Boat</a></li>
+                        <li role="listitem"><a href="Destinations.html" class="text-gray-300 hover:text-teal-400 transition-colors">Destination</a></li>
+                        <li role="listitem"><a href="Contact.html" class="text-gray-300 hover:text-teal-400 transition-colors">Contact Us</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Promotion -->
+                <nav aria-label="Promotional offers">
+                    <h4 class="text-xl font-bold font-playfair mb-6">Promotion</h4>
+                    <ul class="space-y-3" role="list">
+                        <li role="listitem"><a href="#" class="text-gray-300 hover:text-teal-400 transition-colors">Open Trip 3D 2N Sailing</a></li>
+                        <li role="listitem"><a href="#" class="text-gray-300 hover:text-teal-400 transition-colors">Open Trip 2D 1N</a></li>
+                        <li role="listitem"><a href="#" class="text-gray-300 hover:text-teal-400 transition-colors">Overland 5D4N SUMBA</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400" role="contentinfo">2024 eastiopia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Form Validation and Interaction -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('success-message');
+            const messageTextarea = document.getElementById('message');
+            const messageCount = document.getElementById('message-count');
+
+            // Character counter for message field
+            messageTextarea.addEventListener('input', function() {
+                const count = this.value.length;
+                messageCount.textContent = count;
+                
+                if (count > 1000) {
+                    messageCount.parentElement.classList.add('text-red-500');
+                    messageCount.parentElement.classList.remove('text-gray-500');
+                } else {
+                    messageCount.parentElement.classList.remove('text-red-500');
+                    messageCount.parentElement.classList.add('text-gray-500');
+                }
+            });
+
+            // Form validation functions
+            function showError(fieldId, message) {
+                const errorDiv = document.getElementById(fieldId + '-error');
+                const field = document.getElementById(fieldId);
+                
+                errorDiv.textContent = message;
+                errorDiv.classList.remove('hidden');
+                field.classList.add('border-red-500');
+                field.classList.remove('border-green-500');
+            }
+
+            function hideError(fieldId) {
+                const errorDiv = document.getElementById(fieldId + '-error');
+                const field = document.getElementById(fieldId);
+                
+                errorDiv.classList.add('hidden');
+                field.classList.remove('border-red-500');
+                field.classList.add('border-green-500');
+            }
+
+            function validateField(field) {
+                const value = field.value.trim();
+                const fieldId = field.id;
+                let isValid = true;
+
+                switch (fieldId) {
+                    case 'name':
+                        if (!value) {
+                            showError(fieldId, 'Name is required');
+                            isValid = false;
+                        } else if (value.length < 2) {
+                            showError(fieldId, 'Name must be at least 2 characters');
+                            isValid = false;
+                        } else {
+                            hideError(fieldId);
+                        }
+                        break;
+
+                    case 'email':
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!value) {
+                            showError(fieldId, 'Email is required');
+                            isValid = false;
+                        } else if (!emailRegex.test(value)) {
+                            showError(fieldId, 'Please enter a valid email address');
+                            isValid = false;
+                        } else {
+                            hideError(fieldId);
+                        }
+                        break;
+
+                    case 'phone':
+                        if (value && !/^[+]?[0-9\s\-\(\)]+$/.test(value)) {
+                            showError(fieldId, 'Please enter a valid phone number');
+                            isValid = false;
+                        } else {
+                            hideError(fieldId);
+                        }
+                        break;
+
+                    case 'message':
+                        if (!value) {
+                            showError(fieldId, 'Message is required');
+                            isValid = false;
+                        } else if (value.length < 10) {
+                            showError(fieldId, 'Message must be at least 10 characters');
+                            isValid = false;
+                        } else if (value.length > 1000) {
+                            showError(fieldId, 'Message must not exceed 1000 characters');
+                            isValid = false;
+                        } else {
+                            hideError(fieldId);
+                        }
+                        break;
+
+                    case 'privacy':
+                        if (!field.checked) {
+                            showError(fieldId, 'You must agree to the privacy policy');
+                            isValid = false;
+                        } else {
+                            hideError(fieldId);
+                        }
+                        break;
+                }
+
+                return isValid;
+            }
+
+            // Real-time validation
+            const fields = ['name', 'email', 'phone', 'message'];
+            fields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                field.addEventListener('blur', () => validateField(field));
+                field.addEventListener('input', () => {
+                    if (field.classList.contains('border-red-500')) {
+                        validateField(field);
+                    }
+                });
+            });
+
+            // Privacy checkbox validation
+            document.getElementById('privacy').addEventListener('change', function() {
+                validateField(this);
+            });
+
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let isFormValid = true;
+                
+                // Validate all fields
+                fields.forEach(fieldId => {
+                    const field = document.getElementById(fieldId);
+                    if (!validateField(field)) {
+                        isFormValid = false;
+                    }
+                });
+
+                // Validate privacy checkbox
+                const privacyField = document.getElementById('privacy');
+                if (!validateField(privacyField)) {
+                    isFormValid = false;
+                }
+
+                if (isFormValid) {
+                    // Simulate form submission
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                    
+                    setTimeout(() => {
+                        form.style.display = 'none';
+                        successMessage.classList.remove('hidden');
+                        
+                        // Reset form after showing success message
+                        setTimeout(() => {
+                            form.reset();
+                            form.style.display = 'block';
+                            successMessage.classList.add('hidden');
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Send Message';
+                            messageCount.textContent = '0';
+                            
+                            // Clear all validation states
+                            fields.forEach(fieldId => {
+                                const field = document.getElementById(fieldId);
+                                field.classList.remove('border-red-500', 'border-green-500');
+                                hideError(fieldId);
+                            });
+                            hideError('privacy');
+                        }, 3000);
+                    }, 1500);
+                }
+            });
+        });
+
+        // Back to Top Button Functionality
+        const backToTopBtn = document.getElementById('backToTop');
+
+        // Function to toggle button visibility based on scroll position
+        function toggleBackToTop() {
+            try {
+                if (window.scrollY > 300) {
+                    backToTopBtn.style.display = 'block';
+                } else {
+                    backToTopBtn.style.display = 'none';
+                }
+            } catch(error) {
+                console.error('Error toggling back to top button:', error);
+            }
+        }
+
+        // Listen for scroll events
+        window.addEventListener('scroll', toggleBackToTop);
+
+        // Scroll to top on button click with smooth behavior
+        backToTopBtn.addEventListener('click', function() {
+            try {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } catch(error) {
+                console.error('Error during smooth scroll:', error);
+            }
+        });
+    </script>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to Top" style="display: none;">
+        Back To Top
+    </button>
+</body>
+</html>
