@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eastiopia.id - Your Unforgettable Sailing Partner</title>
+    <title>Lombok.Wanderlust - Your Unforgettable Sailing Partner</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .font-playfair { font-family: 'Playfair Display', serif; }
         .font-inter { font-family: 'Inter', sans-serif; }
         .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23059669" width="1200" height="600"/><circle fill="%23047857" cx="200" cy="150" r="80"/><circle fill="%23065f46" cx="800" cy="300" r="120"/><circle fill="%23064e3b" cx="1000" cy="100" r="60"/></svg>');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
             background-size: cover;
             background-position: center;
+        }
+        
+        /* Fade-out and fade-in transitions for slider updates */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.5s ease-in;
         }
         .teal-gradient {
             background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
@@ -92,7 +103,7 @@
     <header class="bg-white shadow-sm fixed w-full top-0 z-50" role="banner">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center" role="navigation" aria-label="Main navigation">
             <div class="text-2xl font-bold text-teal-600 font-playfair" role="img" aria-label="Eastiopia logo">
-                <a href="index.html" class="hover:text-teal-700 transition-colors">EASTIOPIA.ID</a>
+                <a href="index.html" class="hover:text-teal-700 transition-colors">Lombok Wanderlust</a>
             </div>
             
             <!-- Desktop Navigation -->
@@ -117,19 +128,19 @@
     <!-- Hero Section -->
     <section class="hero-bg min-h-screen flex items-center justify-center relative animate-fade-in">
         <!-- Navigation Arrows -->
-        <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-teal-500 hover:bg-teal-600 text-white p-3 rounded-full transition-colors">
+        <button id="prevSlide" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-teal-500 hover:bg-teal-600 text-white p-3 rounded-full transition-colors" aria-label="Previous Slide">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
             </svg>
         </button>
-        <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-teal-500 hover:bg-teal-600 text-white p-3 rounded-full transition-colors">
+        <button id="nextSlide" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-teal-500 hover:bg-teal-600 text-white p-3 rounded-full transition-colors" aria-label="Next Slide">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
         </button>
 
         <div class="text-center text-white px-4">
-            <h1 class="text-5xl md:text-7xl font-bold font-playfair mb-4">Eastiopia.Id</h1>
+            <h1 class="text-5xl md:text-7xl font-bold font-playfair mb-4">Lombok.Wanderlust</h1>
             <p class="text-xl md:text-2xl font-light">Your friendly sailing partner</p>
         </div>
     </section>
@@ -191,7 +202,7 @@
                                     <path d="M3 18h18v-2H3v2zm6.31-8.24l.41-.17c.38-.16.59-.47.59-.84V6.5c0-.83-.67-1.5-1.5-1.5S7.31 5.67 7.31 6.5v2.25c0 .37.21.68.59.84l.41.17c.38.16.59.47.59.84v.9c0 .28.22.5.5.5s.5-.22.5-.5v-.9c0-.37-.21-.68-.59-.84zM12 3L2 12h3v8h14v-8h3L12 3z"/>
                                 </svg>
                             </div>
-                            <h2 class="text-4xl font-bold font-playfair mb-2">east.iopia</h2>
+                            <h2 class="text-4xl font-bold font-playfair mb-2">Lombok.Wanderlust</h2>
                             <p class="text-lg">Your Unforgettable Sailing Partner</p>
                         </div>
                     </div>
@@ -597,7 +608,7 @@
                             </div>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold font-playfair text-teal-400">east.iopia</h3>
+                            <h3 class="text-2xl font-bold font-playfair text-teal-400">Lombok.Wanderlust</h3>
                             <p class="text-sm text-gray-400">Your Unforgettable Sailing Partner</p>
                         </div>
                     </div>
@@ -650,10 +661,88 @@
         Back To Top
     </button>
 
-    <!-- JavaScript for Gallery Modal and Back-to-Top Functionality -->
+    <!-- JavaScript for Gallery Modal, Back-to-Top, and Hero Slider Functionality -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             try {
+                // Hero Slider Functionality
+                const sliderImages = [
+                    'https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg?auto=compress&cs=tinysrgb&w=1200',
+                    'https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=1200',
+                    'https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=1200'
+                ];
+                let currentSlideIndex = 0;
+                const heroSection = document.querySelector('.hero-bg');
+                const prevBtn = document.getElementById('prevSlide');
+                const nextBtn = document.getElementById('nextSlide');
+                const slideDuration = 5000; // 5 seconds
+
+                // Function to update slide with fade transition
+                function updateSlide() {
+                    try {
+                        // Step 1: Fade out hero section
+                        heroSection.classList.add('fade-out');
+                        
+                        // Wait for fade-out animation before updating background
+                        setTimeout(function() {
+                            try {
+                                // Update background with gradient overlay and new image
+                                heroSection.style.backgroundImage = 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(' + sliderImages[currentSlideIndex] + ')';
+                                
+                                // Remove fade-out and fade in smoothly
+                                heroSection.classList.remove('fade-out');
+                                heroSection.classList.add('fade-in');
+
+                                // Remove fade-in class after the transition
+                                setTimeout(function() {
+                                    heroSection.classList.remove('fade-in');
+                                }, 500);
+                            } catch(error) {
+                                console.error('Error updating background image:', error);
+                            }
+                        }, 500);
+                    } catch (error) {
+                        console.error('Error updating slide:', error);
+                    }
+                }
+
+                // Event listener for previous slide
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', function() {
+                        try {
+                            currentSlideIndex = (currentSlideIndex - 1 + sliderImages.length) % sliderImages.length;
+                            updateSlide();
+                        } catch(error) {
+                            console.error('Error switching to previous slide:', error);
+                        }
+                    });
+                }
+
+                // Event listener for next slide
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', function() {
+                        try {
+                            currentSlideIndex = (currentSlideIndex + 1) % sliderImages.length;
+                            updateSlide();
+                        } catch(error) {
+                            console.error('Error switching to next slide:', error);
+                        }
+                    });
+                }
+
+                // Initialize first slide on page load
+                updateSlide();
+
+                // Auto-slide functionality
+                setInterval(function() {
+                    try {
+                        currentSlideIndex = (currentSlideIndex + 1) % sliderImages.length;
+                        updateSlide();
+                    } catch(error) {
+                        console.error('Error in auto-slide transition:', error);
+                    }
+                }, slideDuration);
+
                 // Gallery Modal Functionality
                 const galleryItems = document.querySelectorAll('.gallery-item');
                 const galleryModal = document.getElementById('galleryModal');
