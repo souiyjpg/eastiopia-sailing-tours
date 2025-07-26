@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our comprehensive tour packages - from Komodo sailing adventures to Sumba overland tours. Find your perfect Indonesian adventure with Eastiopia.">
+    <title>Tour Packages - Eastiopia.id</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23059669" width="1200" height="600"/><circle fill="%23047857" cx="200" cy="150" r="80"/><circle fill="%23065f46" cx="800" cy="300" r="120"/><circle fill="%23064e3b" cx="1000" cy="100" r="60"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        .teal-gradient {
+            background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* New Animation Keyframes */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Utility classes for animations */
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.6s ease-out forwards;
+        }
+
+        /* Back to Top Button Styles */
+        #backToTop {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #14b8a6;
+            color: #ffffff;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 100;
+        }
+
+        #backToTop:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-inter">
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed w-full top-0 z-50" role="banner">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center" role="navigation" aria-label="Main navigation">
+            <div class="text-2xl font-bold text-teal-600 font-playfair" role="img" aria-label="Eastiopia logo">
+                <a href="index.html" class="hover:text-teal-700 transition-colors">EASTIOPIA.ID</a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-teal-600 font-medium transition-colors" aria-label="Home page">Home</a>
+                <a href="Tour-Package.html" class="text-teal-600 hover:text-teal-700 font-medium transition-colors" aria-label="Tour packages" aria-current="page">Tour Package</a>
+                <a href="Phinisi-Boat.html" class="text-gray-700 hover:text-teal-600 font-medium transition-colors" aria-label="Phinisi boats">Phinisi Boat</a>
+                <a href="Destinations.html" class="text-gray-700 hover:text-teal-600 font-medium transition-colors" aria-label="Destinations">Destinations</a>
+                <a href="Contact.html" class="text-gray-700 hover:text-teal-600 font-medium transition-colors" aria-label="Contact us">Contact Us</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span class="sr-only">Menu</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center relative pt-20 animate-fade-in" role="banner" aria-label="Tour packages hero section">
+        <div class="text-center text-white px-4">
+            <h1 class="text-5xl md:text-7xl font-bold font-playfair mb-4">Tour Packages</h1>
+            <p class="text-xl md:text-2xl font-light">Discover unforgettable adventures across Indonesia</p>
+        </div>
+    </section>
+
+    <!-- Tour Packages Section -->
+    <main class="py-16 bg-white" role="main" aria-label="Tour packages listing">
+        <div class="container mx-auto px-4">
+            <header class="text-center mb-12">
+                <h2 class="text-4xl font-bold font-playfair text-gray-800 mb-4">Choose Your <span class="text-teal-600">Adventure</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">From sailing adventures in Komodo to cultural explorations in Sumba, find the perfect tour package for your Indonesian journey.</p>
+            </header>
+
+            <!-- Komodo Tours -->
+            <section class="mb-16" aria-label="Komodo tour packages">
+                <h3 class="text-3xl font-bold font-playfair text-gray-800 mb-8 text-center">Komodo <span class="text-teal-600">Adventures</span></h3>
+                <div class="grid md:grid-cols-3 gap-8" role="list">
+                    <article class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover" role="listitem">
+                        <div class="h-64 bg-gradient-to-br from-green-400 to-green-600 relative" role="img" aria-label="Komodo 1 day tour package">
+                            <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="bg-teal-500 text-white px-3 py-1 rounded-full text-sm font-semibold">1 Day Tour</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-teal-600 font-semibold mb-2">Open Trip</p>
+                            <h4 class="text-xl font-bold font-playfair text-gray-800 mb-4">Open Trip Sailing Komodo 1 Day</h4>
+                            <p class="text-gray-600 mb-4">Experience the wonders of Komodo National Park in a single day adventure.</p>
+                            <p class="text-teal-600 font-semibold" aria-label="Price from 1,450,000 Indonesian Rupiah per person">From IDR 1,450 K <span class="text-gray-500 font-normal">| pax</span></p>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover animate-slide-up" role="listitem">
+                        <div class="h-64 bg-gradient-to-br from-teal-400 to-teal-600 relative" role="img" aria-label="Komodo 2 days 1 night tour package">
+                            <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="bg-teal-500 text-white px-3 py-1 rounded-full text-sm font-semibold">2D 1N Tour</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-teal-600 font-semibold mb-2">Open Trip</p>
+                            <h4 class="text-xl font-bold font-playfair text-gray-800 mb-4">Open Trip 2D 1N Sailing Journey</h4>
+                            <p class="text-gray-600 mb-4">Two days of exploration with overnight stay on traditional Phinisi boat.</p>
+                            <p class="text-teal-600 font-semibold" aria-label="Price from 2,250,000 Indonesian Rupiah per person">From IDR 2,250 K <span class="text-gray-500 font-normal">| pax</span></p>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover animate-slide-up" role="listitem">
+                        <div class="h-64 bg-gradient-to-br from-blue-400 to-blue-600 relative" role="img" aria-label="Komodo 3 days 2 nights tour package">
+                            <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="bg-teal-500 text-white px-3 py-1 rounded-full text-sm font-semibold">3D 2N Tour</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-teal-600 font-semibold mb-2">Open Trip</p>
+                            <h4 class="text-xl font-bold font-playfair text-gray-800 mb-4">Open Trip 3D 2N Sailing Journey</h4>
+                            <p class="text-gray-600 mb-4">Complete Komodo experience with multiple islands and diving spots.</p>
+                            <p class="text-teal-600 font-semibold" aria-label="Price from 2,800,000 Indonesian Rupiah per person">From IDR 2,800 K <span class="text-gray-500 font-normal">| pax</span></p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Sumba Tours -->
+            <section class="mb-16" aria-label="Sumba tour packages">
+                <h3 class="text-3xl font-bold font-playfair text-gray-800 mb-8 text-center">Sumba <span class="text-teal-600">Explorations</span></h3>
+                <div class="grid md:grid-cols-3 gap-8" role="list">
+                    <article class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover animate-slide-up" role="listitem">
+                        <div class="h-64 bg-gradient-to-br from-orange-400 to-orange-600 relative" role="img" aria-label="Sumba 4 days 3 nights tour package">
+                            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <h4 class="text-3xl font-bold font-playfair mb-2">SUMBA</h4>
+                                    <p class="text-sm">OPEN TRIP 4D 3N</p>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="bg-teal-500 text-white px-3 py-1 rounded-full text-sm font-semibold">4D 3N Tour</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-teal-600 font-semibold mb-2">Open Trip</p>
+                            <h4 class="text-xl font-bold font-playfair text-gray-800 mb-4">Open Trip 4D3N Sumba</h4>
+                            <p class="text-gray-600 mb-4">Discover the cultural richness and natural beauty of Sumba island.</p>
+                            <p class="text-teal-600 font-semibold" aria-label="Price from 3,000,000 Indonesian Rupiah per person">From IDR 3,000 K <span class="text-gray-500 font-normal">| pax</span></p>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover animate-slide-up" role="listitem">
+                        <div class="h-64 bg-gradient-to-br from-gray-600 to-gray-800 relative" role="img" aria-label="Sumba overland 4 days 3 nights tour package">
+                            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <h4 class="text-3xl font-bold font-playfair mb-2">SUMBA</h4>
+                                    <p class="text-sm">OVERLAND 4D3N</p>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="bg-teal-500 text-white px-3 py-1 rounded-full text-sm font-semibold">4D 3N Tour</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-teal-600 font-semibold mb-2">Private Trip</p>
+                            <h4 class="text-xl font-bold font-playfair text-gray-800 mb-4">Overland 4D3N SUMBA</h4>
+                            <p class="text-gray-600 mb-4">Private overland adventure exploring Sumba's hidden gems.</p>
+                            <p class="text-teal-600 font-semibold" aria-label="Price from 3,200,000 Indonesian Rupiah per person">From IDR 3,200 K <span class="text-gray-500 font-normal">| pax</span></p>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover animate-slide-up" role="listitem">
+                        <div class="h-64 bg-gradient-to-br from-gray-700 to-gray-900 relative" role="img" aria-label="Sumba overland 5 days 4 nights tour package">
+                            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <h4 class="text-3xl font-bold font-playfair mb-2">SUMBA</h4>
+                                    <p class="text-sm">OVERLAND 5D4N</p>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="bg-teal-500 text-white px-3 py-1 rounded-full text-sm font-semibold">5D 4N Tour</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-teal-600 font-semibold mb-2">Private Trip</p>
+                            <h4 class="text-xl font-bold font-playfair text-gray-800 mb-4">Overland 5D4N SUMBA</h4>
+                            <p class="text-gray-600 mb-4">Extended private journey through Sumba's landscapes and culture.</p>
+                            <p class="text-teal-600 font-semibold" aria-label="Price from 3,500,000 Indonesian Rupiah per person">From IDR 3,500 K <span class="text-gray-500 font-normal">| pax</span></p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Private Charter -->
+            <section aria-label="Private charter packages">
+                <h3 class="text-3xl font-bold font-playfair text-gray-800 mb-8 text-center">Private <span class="text-teal-600">Charter</span></h3>
+                <div class="grid md:grid-cols-3 gap-8" role="list">
+                    <article class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover animate-slide-up" role="listitem">
+                        <div class="h-64 bg-gradient-to-br from-teal-400 to-teal-600 relative" role="img" aria-label="Standard Phinisi private charter">
+                            <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="bg-teal-500 text-white px-3 py-1 rounded-full text-sm font-semibold">1-4 Days</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-teal-600 font-semibold mb-2">Private Trip</p>
+                            <h4 class="text-xl font-bold font-playfair text-gray-800 mb-4">Private Charter Standard Phinisi</h4>
+                            <p class="text-gray-600 mb-4">Exclusive charter of our standard Phinisi boat for your group.</p>
+                            <p class="text-teal-600 font-semibold" aria-label="Price from 19,250,000 Indonesian Rupiah">From IDR 19,250 K</p>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover animate-slide-up" role="listitem">
+                        <div class="h-64 bg-gradient-to-br from-green-400 to-green-600 relative" role="img" aria-label="Medium Phinisi private charter">
+                            <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="bg-teal-500 text-white px-3 py-1 rounded-full text-sm font-semibold">1-4 Days</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-teal-600 font-semibold mb-2">Private Trip</p>
+                            <h4 class="text-xl font-bold font-playfair text-gray-800 mb-4">Private Charter Medium Phinisi</h4>
+                            <p class="text-gray-600 mb-4">Medium-sized Phinisi with enhanced comfort and amenities.</p>
+                            <p class="text-teal-600 font-semibold" aria-label="Price from 29,700,000 Indonesian Rupiah">From IDR 29,700 K</p>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover animate-slide-up" role="listitem">
+                        <div class="h-64 bg-gradient-to-br from-blue-400 to-blue-600 relative" role="img" aria-label="Superior Phinisi private charter">
+                            <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="bg-teal-500 text-white px-3 py-1 rounded-full text-sm font-semibold">1-4 Days</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-teal-600 font-semibold mb-2">Private Trip</p>
+                            <h4 class="text-xl font-bold font-playfair text-gray-800 mb-4">Private Charter Superior Phinisi</h4>
+                            <p class="text-gray-600 mb-4">Luxury Phinisi experience with premium facilities and service.</p>
+                            <p class="text-teal-600 font-semibold" aria-label="Price from 37,400,000 Indonesian Rupiah">From IDR 37,400 K</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16" role="contentinfo">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 text-teal-400 mr-4 flex items-center justify-center" role="img" aria-label="Eastiopia boat logo">
+                            <div class="relative">
+                                <div class="w-8 h-4 bg-current rounded-t-full"></div>
+                                <div class="w-10 h-1 bg-current mx-auto"></div>
+                                <div class="w-6 h-3 bg-current mx-auto rounded-b-lg"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold font-playfair text-teal-400">east.iopia</h3>
+                            <p class="text-sm text-gray-400">Your Unforgettable Sailing Partner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">
+                        Whether exploring the islands of Komodo or diving in the coral-rich seas of Raja Ampat, Eastiopia ensures a remarkable journey for travelers seeking adventure, relaxation, and natural beauty
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <nav aria-label="Footer navigation">
+                    <h4 class="text-xl font-bold font-playfair mb-6">Quick Link</h4>
+                    <ul class="space-y-3" role="list">
+                        <li role="listitem"><a href="Tour-Package.html" class="text-gray-300 hover:text-teal-400 transition-colors">Tour Package</a></li>
+                        <li role="listitem"><a href="Phinisi-Boat.html" class="text-gray-300 hover:text-teal-400 transition-colors">Phinisi Boat</a></li>
+                        <li role="listitem"><a href="Destinations.html" class="text-gray-300 hover:text-teal-400 transition-colors">Destination</a></li>
+                        <li role="listitem"><a href="Contact.html" class="text-gray-300 hover:text-teal-400 transition-colors">Contact Us</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Promotion -->
+                <nav aria-label="Promotional offers">
+                    <h4 class="text-xl font-bold font-playfair mb-6">Promotion</h4>
+                    <ul class="space-y-3" role="list">
+                        <li role="listitem"><a href="#" class="text-gray-300 hover:text-teal-400 transition-colors">Open Trip 3D 2N Sailing</a></li>
+                        <li role="listitem"><a href="#" class="text-gray-300 hover:text-teal-400 transition-colors">Open Trip 2D 1N</a></li>
+                        <li role="listitem"><a href="#" class="text-gray-300 hover:text-teal-400 transition-colors">Overland 5D4N SUMBA</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400" role="contentinfo">2024 eastiopia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to Top" style="display: none;">
+        Back To Top
+    </button>
+
+    <!-- JavaScript for Back-to-Top Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopBtn = document.getElementById('backToTop');
+
+            // Function to toggle button visibility based on scroll position
+            function toggleBackToTop() {
+                try {
+                    if (window.scrollY > 300) {
+                        backToTopBtn.style.display = 'block';
+                    } else {
+                        backToTopBtn.style.display = 'none';
+                    }
+                } catch(error) {
+                    console.error('Error toggling back to top button:', error);
+                }
+            }
+
+            // Listen for scroll events
+            window.addEventListener('scroll', toggleBackToTop);
+
+            // Scroll to top on button click with smooth behavior
+            backToTopBtn.addEventListener('click', function() {
+                try {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } catch(error) {
+                    console.error('Error during smooth scroll:', error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
